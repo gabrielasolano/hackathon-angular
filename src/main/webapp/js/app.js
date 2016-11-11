@@ -6,7 +6,26 @@ var App = angular.module('App', [
 
 App.config(function($routeProvider){
 	$routeProvider
-	.when('/', {
+	.when('/',{
+		templateUrl: 'views/read.html',
+		controller: 'ReadCtrl'
+	})
+	.when('/agente',{
+		templateUrl: 'views/agente/agente.html',
+		controller: 'AgenteCtrl'
+	})
+	
+	.when('/criarAgente', {
+		templateUrl: 'views/agente/criarAgente.html',
+		controller: 'AgenteCtrl'
+	})
+
+	.when('/editarAgente', {
+		templateUrl: 'views/agente/editarAgente.html',
+		controller: 'AgenteCtrl'
+	})
+	
+/*	.when('/', {
 		templateUrl: 'views/agente/agente.html',
 		controller: 'AgenteCtrl'
 	})
@@ -19,7 +38,7 @@ App.config(function($routeProvider){
 	.when('/editarAgente', {
 		templateUrl: 'views/agente/editarAgente.html',
 		controller: 'AgenteCtrl'
-	})
+	})*/
 });
 
 App.value('API', 'http://localhost:8080/angular-app/service/');

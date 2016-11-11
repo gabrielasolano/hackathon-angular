@@ -5,6 +5,7 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -43,12 +44,12 @@ public class AgenteController {
 	 		this.agenteService.alterar(agente);
 	 	}
 	 	
-	 	@POST
-	 	@Path("deletar/{id}")
+	 	@POST /*No service do js eh especificado o tipo de request (post, get, delete, put, etc)*/
+	 	@Path("/deletar")
 	 	@Consumes(MediaType.APPLICATION_JSON)
 	 	@Produces(MediaType.APPLICATION_JSON)
-	 	public void put(Integer id){
-	 		this.agenteService.remover(id);
+	 	public void delete(Agente agente){
+	 		this.agenteService.remover(agente.getIdAgente());
 	 	}
 	 	
 	 	

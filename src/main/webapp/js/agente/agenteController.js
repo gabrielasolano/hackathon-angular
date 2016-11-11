@@ -1,6 +1,7 @@
 App.controller('AgenteCtrl', function($scope, AgenteService, $route,$routeParams,$location,EnvioService){
 	$scope.agente = [];
 	$scope.agenteEditar = {};
+	$scope.agenteCriar = {};
 
 	$scope.notFound = false;
 	AgenteService.list().then(function(data){
@@ -12,9 +13,10 @@ App.controller('AgenteCtrl', function($scope, AgenteService, $route,$routeParams
 		console.log("data", data);
 	});
 	$scope.agenteEditar = EnvioService.getParametro();
+	$scope.agenteCriar = EnvioService.getParametro();
 	
-	$scope.deletar = function(id){
-		AgenteService.delete(id).then(function(data){
+	$scope.deletar = function(item){
+		AgenteService.delete(item).then(function(data){
 			console.log(data);
 			$route.reload();
 		});	
@@ -28,14 +30,21 @@ App.controller('AgenteCtrl', function($scope, AgenteService, $route,$routeParams
 
 	$scope.atualizar = function(item){
 		AgenteService.update(item, item.idAgente).then(function(data){
-				$location.path('/');
+				$location.path('/agente');
 				$route.reload();
 			});
 	}
 	
+	$scope.criacao = function(){
+		$scope.agenteCriar = {};
+		EnvioService.addParametro($scope.agenteCriar);
+		$route.reload();
+		$location.path('/criarAgente');
+	}
+	
 	$scope.criar = function(item){
 		AgenteService.create(item).then(function(data){
-			$location.path('/criarAgente');
+			$location.path('/agente');
 			$route.reload();
 		});
 	}

@@ -1,7 +1,7 @@
 var App = angular.module('controllers', []);
 
-App.controller('ReadCtrl', function($scope, Tipo, $route){
-	$scope.tipo = [];
+App.controller('ReadCtrl', function($scope, /*Tipo,*/ $route){
+/*	$scope.tipo = [];
 	$scope.notFound = false;
 	Tipo.list().then(function(data){
 		$scope.tipo = data.data;
@@ -17,10 +17,10 @@ App.controller('ReadCtrl', function($scope, Tipo, $route){
 			console.log(data);
 			$route.reload();
 		});	
-	}
+	}*/
 });	
 
-App.controller('CreateCtrl', function($scope, Tipo, $location){
+/*App.controller('CreateCtrl', function($scope, Tipo, $location){
 	$scope.cadastrar = function(titulo){
 		var data = {
 			titulo: titulo
@@ -44,4 +44,4 @@ App.controller('EditCtrl', function($scope, Tipo, $routeParams, $location){
 			$location.path('/');
 		});
 	}
-});	
+});*/	
