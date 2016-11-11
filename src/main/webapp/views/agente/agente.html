@@ -3,7 +3,7 @@
 	<h2 class="text-center"><u>Lista de Agentes Cadastrados</u></h2>
 </div>
 <div class="row">
-<a href="#/create" class="btn btn-primary">Cadastrar</a>
+<a href="#/criarAgente" class="btn btn-primary">Cadastrar</a>
 </div>
 <br/>
 <div class="row">
@@ -14,16 +14,19 @@
 			<td>Nome</td>
 			<td>Data Contratacao</td>
 			<td>Tempo de Servico</td>
+			<td>Matricula</td>
 			<td></td>
 			<td></td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr ng-repeat="item in agente">
+		<!-- <td>{{item.matricula}}</td> -->
 		<td>{{item.idAgente}}</td>
 		<td>{{item.nome}}</td>
 		<td>{{item.dtContratacao}}</td>
 		<td>{{item.tempoServico}}</td>
+		<td>{{item.matricula}}</td>
 		<!-- <td><a href="#/editarAgente/{{item.idAgente}}" class="btn btn-info btn-block">Editar</a></td> -->
 		<td><button ng-click="editar(item)" class="btn btn-info btn-block">Editar</button></td>
 		<td><button ng-click="deletar(item.idAgente)" class="btn btn-danger btn-block">Deletar</button></td>

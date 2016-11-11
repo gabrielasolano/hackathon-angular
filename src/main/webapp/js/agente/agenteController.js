@@ -29,7 +29,15 @@ App.controller('AgenteCtrl', function($scope, AgenteService, $route,$routeParams
 	$scope.atualizar = function(item){
 		AgenteService.update(item, item.idAgente).then(function(data){
 				$location.path('/');
+				$route.reload();
 			});
+	}
+	
+	$scope.criar = function(item){
+		AgenteService.create(item).then(function(data){
+			$location.path('/criarAgente');
+			$route.reload();
+		});
 	}
 	
 });
