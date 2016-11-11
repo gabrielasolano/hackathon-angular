@@ -12,49 +12,50 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.stefanini.model.Agente;
-import com.stefanini.service.AgenteService;
+import com.stefanini.model.Localinfracao;
+import com.stefanini.service.LocalinfracaoService;
 
-@Path("/agente")
+@Path("/localInfracao")
 @RequestScoped
-public class AgenteController {
+public class LocalInfracaoController {
+
 	
 		@Inject
-		AgenteService agenteService;
+		LocalinfracaoService localInfracaoService;
 	
 	 	@GET
 	    @Produces(MediaType.APPLICATION_JSON)
-	    public List<Agente> get() {
-	 		return agenteService.listar();
+	    public List<Localinfracao> get() {
+	 		return localInfracaoService.listar();
 	    }
 	 	
 	 	@POST
 	 	@Consumes(MediaType.APPLICATION_JSON)
 	 	@Produces(MediaType.APPLICATION_JSON)
-	 	public void post(Agente agente){
-	 		this.agenteService.incluir(agente);
+	 	public void post(Localinfracao localInfracao){
+	 		this.localInfracaoService.incluir(localInfracao);
 	 	}
 	 	
 	 	@PUT
 	 	@Path("/{id}")
 	 	@Consumes(MediaType.APPLICATION_JSON)
 	 	@Produces(MediaType.APPLICATION_JSON)
-	 	public void put(Agente agente){
-	 		this.agenteService.alterar(agente);
+	 	public void put(Localinfracao localInfracao){
+	 		this.localInfracaoService.alterar(localInfracao);
 	 	}
 	 	
 	 	@POST /*No service do js eh especificado o tipo de request (post, get, delete, put, etc)*/
 	 	@Path("/deletar")
 	 	@Consumes(MediaType.APPLICATION_JSON)
 	 	@Produces(MediaType.APPLICATION_JSON)
-	 	public void delete(Agente agente){
-	 		this.agenteService.remover(agente.getIdAgente());
+	 	public void delete(Localinfracao localInfracao){
+	 		this.localInfracaoService.remover(localInfracao.getIdLocalInfracao());
 	 	}
 	 	
 	 	
 	 	@POST
 	 	@Consumes(MediaType.APPLICATION_JSON)
-	 	public Controle Salvar(Agente agente){
+	 	public Controle Salvar(Localinfracao localInfracao){
 	 		Controle controle = new Controle();
 	 		try{
 	 			controle.setSucesso("Dados inseridos com sucesso");

@@ -1,0 +1,34 @@
+<div class="col-md-12">
+<div class="row">
+	<h2 class="text-center"><u>Lista de Locais de Infracao Cadastrados</u></h2>
+	<a ng-click="criacao()" class="btn btn-primary">Cadastrar</a>
+	<a href="#/" class="btn btn-warning">Voltar</a>
+</div>
+<br/>
+<div class="row">
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Descricao</td>
+			<td>Velocidade Permitida</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in localInfracao">
+		<td>{{item.idLocalInfracao}}</td>
+		<td>{{item.descricaoLocalInfracao}}</td>
+		<td>{{item.velocidadePermitida}}</td>
+		<td><button ng-click="editar(item)" class="btn btn-info btn-block">Editar</button></td>
+		<td><button ng-click="deletar(item)" class="btn btn-danger btn-block">Deletar</button></td>
+		</tr>
+		<tr ng-show="notFound" class="text-center">
+			<td colspan="4">Não tem registros</td>
+		</tr>
+	</tbody>
+</table>
+	
+</div>
+</div>

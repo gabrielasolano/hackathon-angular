@@ -1,0 +1,42 @@
+
+
+<div class="col-md-12">
+<div class="row">
+	<h2 class="text-center"><u>Lista de Infracoes Cadastradas</u></h2>
+	 <a ng-click="criacao()" class="btn btn-primary">Cadastrar</a>
+	<a href="#/" class="btn btn-warning">Voltar</a>
+</div>
+<br/>
+<div class="row">
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Agente</td>
+			<td>Local de infracao</td>
+			<td>Tipo de infracao</td>
+			<td>Placa</td>
+			<td>Velocidade</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in infracao">
+		<td>{{item.idInfracao}}</td>
+		<td>{{item.agente.nome}}</td>
+		<td>{{item.localInfracao.descricaoLocalInfracao}}</td>
+		<td>{{item.tipoInfracao.descricaoTipoInfracao}}</td>
+		<td>{{item.placa}}</td>
+		<td>{{item.velocidade}}</td>
+		<td><button ng-click="editar(item)" class="btn btn-info btn-block">Editar</button></td>
+		<td><button ng-click="deletar(item)" class="btn btn-danger btn-block">Deletar</button></td>
+		</tr>
+		<tr ng-show="notFound" class="text-center">
+			<td colspan="4">Não tem registros</td>
+		</tr>
+	</tbody>
+</table>
+	
+</div>
+</div>

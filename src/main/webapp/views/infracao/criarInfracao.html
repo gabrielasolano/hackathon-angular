@@ -1,0 +1,30 @@
+<div class="row">
+	<h2>Criar Infracao</h2>
+</div>
+<div class="row">
+<form class="form-horizontal" ng-submit="criar(infracaoCriar)">
+	<div class="form-group">
+		<input type="hidden" ng-model="infracaoCriar.idInfracao">
+		<input type="text"   ng-model="infracaoCriar.velocidade" class="form-control" placeholder="Velocidade">
+		<input type="text"   ng-model="infracaoCriar.placa" class="form-control" placeholder="Placa">
+		
+		<select ng-model="infracaoCriar.agente" ng-repeat="item in infracao" class="form-control" placeholder="Agente">
+			<option>{{item.agente.nome}}</option>	
+		</select>
+		
+		<select ng-model="infracaoCriar.localInfracao" ng-repeat="item in infracao" class="form-control" placeholder="Local de infracao">
+			<option>{{item.localInfracao.descricaoLocalInfracao}}</option>	
+		</select>
+		
+		<select ng-model="infracaoCriar.tipoInfracao" ng-repeat="item in infracao" class="form-control" placeholder="Tipo de infracao">
+			<option>{{item.tipoInfracao.descricaoTipoInfracao}}</option>	
+		</select>
+		
+	</div>
+	<div class="form-group">
+		<button class="btn btn-success">Criar</button>
+		<a href="#/infracao" class="btn btn-warning">Cancelar</a>
+	</div>	
+	
+</form>
+</div>

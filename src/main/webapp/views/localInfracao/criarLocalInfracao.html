@@ -1,0 +1,16 @@
+<div class="row">
+	<h2>Criar Local de Infracao</h2>
+</div>
+<div class="row">
+<form class="form-horizontal" ng-submit="criar(localInfracaoCriar)">
+	<div class="form-group">
+		<input type="text"   ng-model="localInfracaoCriar.descricaoLocalInfracao" class="form-control" placeholder="Descricao">
+		<input type="hidden" ng-model="localInfracaoCriar.idTipoInfracao">
+		<input type="text"   ng-model="localInfracaoCriar.velocidadePermitida" class="form-control" placeholder="Velocidade permitida">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-success">Criar</button>
+		<a href="#/localInfracao" class="btn btn-warning">Cancelar</a>
+	</div>	
+</form>
+</div>
