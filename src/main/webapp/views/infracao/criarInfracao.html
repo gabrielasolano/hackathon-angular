@@ -7,18 +7,29 @@
 		<input type="hidden" ng-model="infracaoCriar.idInfracao">
 		<input type="text"   ng-model="infracaoCriar.velocidade" class="form-control" placeholder="Velocidade">
 		<input type="text"   ng-model="infracaoCriar.placa" class="form-control" placeholder="Placa">
+		<!-- <input type="text"   ng-model="infracaoCriar.localInfracao.idLocalInfracao" class="form-control" placeholder="Local infracao">
+		<input type="text"   ng-model="infracaoCriar.tipoInfracao.idTipoInfracao" class="form-control" placeholder="Tipo infracao"> -->
+		<div ng-controller="AgenteCtrl">
+			<select class="form-control" ng-model="infracaoCriar.agente.idAgente">
+				<option value="" selected="false" class="form-control">Agente</option>
+	 			<option ng-repeat="item in agente"  class="form-control">{{item.idAgente}}</option>
+			</select>
+		</div>
 		
-		<select ng-model="infracaoCriar.agente" ng-repeat="item in infracao" class="form-control" placeholder="Agente">
-			<option>{{item.agente.nome}}</option>	
-		</select>
 		
-		<select ng-model="infracaoCriar.localInfracao" ng-repeat="item in infracao" class="form-control" placeholder="Local de infracao">
-			<option>{{item.localInfracao.descricaoLocalInfracao}}</option>	
-		</select>
-		
-		<select ng-model="infracaoCriar.tipoInfracao" ng-repeat="item in infracao" class="form-control" placeholder="Tipo de infracao">
-			<option>{{item.tipoInfracao.descricaoTipoInfracao}}</option>	
-		</select>
+		<div ng-controller="TipoInfracaoCtrl">
+			<select class="form-control" ng-model="infracaoCriar.tipoInfracao.idTipoInfracao">
+				<option value="" selected="false" class="form-control">Tipo de infracao</option>
+	 			<option ng-repeat="item in tipoInfracao"  class="form-control">{{item.idTipoInfracao}}</option>
+			</select>
+		</div>
+
+		<div ng-controller="LocalInfracaoCtrl">
+			<select class="form-control" ng-model="infracaoCriar.localInfracao.idLocalInfracao">
+				<option value="" selected="false" class="form-control">Local de infracao</option>
+	 			<option ng-repeat="item in localInfracao"  class="form-control">{{item.idLocalInfracao}}</option>
+			</select>
+		</div>
 		
 	</div>
 	<div class="form-group">

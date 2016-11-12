@@ -12,6 +12,7 @@ App.controller('TipoInfracaoCtrl', function($scope, TipoInfracaoService, $route,
 	},function(data){
 		console.log("data", data);
 	});
+
 	$scope.tipoInfracaoEditar = EnvioService.getParametro();
 	$scope.tipoInfracaoCriar = EnvioService.getParametro();
 	

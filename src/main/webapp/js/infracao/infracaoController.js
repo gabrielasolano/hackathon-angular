@@ -1,7 +1,14 @@
 App.controller('InfracaoCtrl', function($scope, InfracaoService, $route,$routeParams,$location,EnvioService){
 	$scope.infracao = [];
+	$scope.agente = [];
+	$scope.tipoInfracao = [];
+	$scope.localInfracao = [];
+	
 	$scope.infracaoEditar = {};
 	$scope.infracaoCriar = {};
+	$scope.infracaoCriar.agente = {};
+	$scope.infracaoCriar.tipoInfracao = {};
+	$scope.infracaoCriar.localInfracao = {};
 
 	$scope.notFound = false;
 	InfracaoService.list().then(function(data){
