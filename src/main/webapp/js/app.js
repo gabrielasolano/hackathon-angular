@@ -12,8 +12,8 @@ App.config(function($routeProvider){
 	})
 
 	.when('/create', {
-		templateUrl: 'views/create.html',
-		controller: 'CreateCtrl'
+		templateUrl: 'views/agente/novoAgente.html',
+		controller: 'AgenteCtrl'
 	})
 
 	.when('/editarAgente', {

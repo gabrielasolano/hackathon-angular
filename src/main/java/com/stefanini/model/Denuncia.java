@@ -27,13 +27,6 @@ public class Denuncia implements Serializable {
     @JoinColumn(nullable = false)
     private Denunciante denunciante;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(nullable = false)
-    private Endereco endereco;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private Tipo tipo;
 
     public Long getId() {
         return id;
@@ -57,22 +50,6 @@ public class Denuncia implements Serializable {
 
     public void setDenunciante(Denunciante denunciante) {
         this.denunciante = denunciante;
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
-    public Tipo getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
     }
 
 }

@@ -10,7 +10,8 @@ App.factory('AgenteService', function($http, API){
 			return $http.put(API+'agente/'+id, item);	
 		},
 		delete: function(id){
-			return $http.delete(API+'agente/'+id);
+			debugger;
+			return $http.post(API+'agente/deletar/'+id, id);
 		}
 	}
 })
